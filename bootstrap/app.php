@@ -15,9 +15,13 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        /*
-		 $exceptions->render(function (BookNotFoundException $exception){
-            return ApiResponse::error('',$exception->getMessage(), $exception->getCode());
+
+        $exceptions->render(function (\App\Exceptions\SalePreconditionFailedException $e) {
+            return response()->json(['error' => $e->getMessage()], 412);
         });
-		*/
+
+        $exceptions->render(function (\App\Exceptions\SaleNotFoundException $e) {
+            return response()->json(['error' => $e->getMessage()], 404);
+        });
+        
     })->create();
