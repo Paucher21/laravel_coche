@@ -7,7 +7,6 @@ class SaleRepository
 {
     public function getAll()
     {
-        // Requerimiento: mostrar información del coche "with('car')"
         return Sale::with('car')->get();
     }
 

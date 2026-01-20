@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "laravel_coche",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

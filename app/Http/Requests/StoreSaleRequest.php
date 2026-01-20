@@ -23,8 +23,8 @@ class StoreSaleRequest extends FormRequest
     {
         return [
             'amount' => 'required|numeric',
-            'sale_date' => 'required|date', // Nota: camelCase en JSON -> snake_case en DB
-            'seller_id' => 'required|exists:users,id', // Asumiendo tabla users, o solo integer
+            'sale_date' => 'required|date', 
+            'seller_id' => 'required|exists:users,id',
             'client_id' => 'required|integer',
             'car_id' => 'required|exists:cars,id',
         ];

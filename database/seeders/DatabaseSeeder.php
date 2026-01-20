@@ -13,14 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Crear 3 Coches
         $car1 = Car::create(['license' => '1111AAA', 'model' => 'Fiesta', 'brand' => 'Ford', 'used' => true]);
         $car2 = Car::create(['license' => '2222BBB', 'model' => 'Clio', 'brand' => 'Renault', 'used' => false]);
         $car3 = Car::create(['license' => '3333CCC', 'model' => 'Ibiza', 'brand' => 'Seat', 'used' => true]);
-        // Coche extra para probar venta nueva
+       
         Car::create(['license' => '4444DDD', 'model' => 'Civic', 'brand' => 'Honda', 'used' => false]);
 
-        // 2. Crear 3 Ventas asociadas a los primeros 3 coches
+       
         Sale::create([
             'status' => 'Created', 'amount' => 5000, 'sale_date' => '2024-01-01', 
             'seller_id' => 1, 'client_id' => 10, 'car_id' => $car1->id
